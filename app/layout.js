@@ -1,5 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
+
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +16,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        {/* <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" /> */}
+
+      </head>
+      <body className={inter.className}>
+        {children}
+        <Script src="../path/to/flowbite/dist/flowbite.min.js" />
+        <Script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js" />
+
+
+
+      </body>
     </html>
   );
 }
